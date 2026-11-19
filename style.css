@@ -15,7 +15,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; background: var(--cream); }
 body {
   margin: 0;
   font-family: var(--sans);
@@ -55,9 +55,14 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; mar
 /* ---------- Header ---------- */
 .header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(255, 250, 248, .94);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  background: var(--cream);
   border-bottom: 1px solid var(--line);
+}
+/* Встроені браузери (Telegram, Instagram на iOS) малюють сторінку під своєю
+   верхньою панеллю. Заливаємо простір над шапкою, щоб контент там не було видно. */
+.header::before {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 100%;
+  height: 100vh; background: var(--cream); pointer-events: none;
 }
 .header__inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 64px; }
 .logo { display: flex; flex-direction: column; text-decoration: none; color: var(--wine); line-height: 1; }
