@@ -80,7 +80,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; mar
     linear-gradient(135deg, #8d2a4b 0%, #7a1f3d 45%, #4e1025 100%);
 }
 .hero__bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(46,10,24,.35), rgba(46,10,24,.55)); }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(46,10,24,.5), rgba(46,10,24,.68)); }
+.hero__content { text-shadow: 0 1px 12px rgba(46,10,24,.45); }
 .hero__content { position: relative; z-index: 1; padding-top: 48px; padding-bottom: 48px; }
 .hero__slogan { font-family: var(--script); font-size: 22px; margin: 0 0 10px; color: var(--rose); }
 .hero__title { font-size: clamp(38px, 10vw, 72px); font-weight: 600; margin-bottom: 14px; }
@@ -237,3 +238,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; mar
   .hero__slogan { font-size: 28px; }
   .hero__subtitle { font-size: 18px; }
 }
+
+/* ---------- Load more ---------- */
+.more { text-align: center; margin-top: 24px; }
+.hero__bg { background-position: center 35%; }

@@ -32,18 +32,38 @@
   const emptyMsg = document.querySelector(".grid__empty");
   const filtersEl = document.querySelector(".filters");
 
-  function placeholder(name) {
+  const BALLOON_SVG =
+    '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">' +
+    '<ellipse cx="26" cy="22" rx="11" ry="13"/><ellipse cx="41" cy="27" rx="10" ry="12"/>' +
+    '<path d="M26 35l-2 3h4zM41 39l-2 3h4zM26 38c0 8 6 10 6 20M41 42c0 6-6 9-9 16"/></svg>';
+
+  function placeholder(item) {
     const d = document.createElement("div");
     d.className = "card__placeholder";
-    d.innerHTML = FLOWER_SVG + "<small>фото незабаром</small>";
-    d.setAttribute("aria-label", name);
+    d.innerHTML = (item.category === "kulky" ? BALLOON_SVG : FLOWER_SVG) + "<small>фото незабаром</small>";
+    d.setAttribute("aria-label", item.name);
     return d;
   }
 
+  const PAGE = 12;
+  const moreBtn = document.getElementById("showMore");
+  let currentList = [];
+  let shown = 0;
+
   function renderCards(filter) {
     grid.innerHTML = "";
-    const list = filter === "all" ? items : items.filter((b) => b.category === filter);
-    list.forEach((b, idx) => {
+    currentList = filter === "all" ? items : items.filter((b) => b.category === filter);
+    shown = 0;
+    emptyMsg.hidden = currentList.length > 0;
+    renderMore();
+  }
+
+  function renderMore() {
+    const batch = currentList.slice(shown, shown + PAGE);
+    shown += batch.length;
+    moreBtn.hidden = shown >= currentList.length;
+    moreBtn.textContent = "Показати ще (" + (currentList.length - shown) + ")";
+    batch.forEach((b, idx) => {
       const card = document.createElement("article");
       card.className = "card";
       card.style.animationDelay = Math.min(idx * 40, 300) + "ms";
@@ -54,7 +74,7 @@
       img.alt = b.name;
       img.loading = "lazy";
       img.decoding = "async";
-      img.onerror = () => { img.remove(); media.appendChild(placeholder(b.name)); };
+      img.onerror = () => { img.remove(); media.appendChild(placeholder(b)); };
       img.src = b.photo;
       media.appendChild(img);
 
@@ -72,8 +92,8 @@
       card.append(media, body);
       grid.appendChild(card);
     });
-    emptyMsg.hidden = list.length > 0;
   }
+  moreBtn.addEventListener("click", renderMore);
 
   CATEGORIES.forEach((c, i) => {
     const btn = document.createElement("button");
