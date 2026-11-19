@@ -115,6 +115,19 @@
   });
   renderCards("all");
 
+  // ---------- Магазини і карта ----------
+  const mapFrame = document.getElementById("mapFrame");
+  document.querySelectorAll(".location").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".location").forEach((b) => b.classList.toggle("is-active", b === btn));
+      mapFrame.src = "https://www.google.com/maps?q=" + encodeURIComponent(btn.dataset.q) + "&hl=uk&z=16&output=embed";
+      // На телефоні карта під списком — прокручуємо до неї
+      if (window.matchMedia("(max-width: 959px)").matches) {
+        mapFrame.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+  });
+
   // ---------- Форма замовлення ----------
   const modal = document.getElementById("orderModal");
   const form = document.getElementById("orderForm");
@@ -122,7 +135,7 @@
   const select = document.getElementById("bouquetSelect");
   const addressField = document.getElementById("addressField");
   const addressInput = form.elements.address;
-  const pickupNote = document.getElementById("pickupNote");
+  const pickupField = document.getElementById("pickupField");
   let lastFocus = null;
 
   // Список букетів у селекті, згрупований за категоріями
@@ -170,7 +183,7 @@
     const pickup = form.elements.delivery.value === "pickup";
     addressField.hidden = pickup;
     addressInput.required = !pickup;
-    pickupNote.hidden = !pickup;
+    pickupField.hidden = !pickup;
   }
 
   document.querySelectorAll("[data-order]").forEach((b) => b.addEventListener("click", () => openOrder(null)));
