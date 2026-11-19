@@ -115,6 +115,24 @@
   });
   renderCards("all");
 
+  // ---------- Плаваюча кнопка «Замовити» (телефони) ----------
+  // Ховаємо її, коли на екрані вже є своя кнопка замовлення: у hero та в контактах/футері
+  const fab = document.querySelector(".fab");
+  const zones = [".hero", "#contacts", ".footer"].map((s) => document.querySelector(s)).filter(Boolean);
+  function updateFab() {
+    const vh = window.innerHeight;
+    const zoneOnScreen = zones.some((z) => {
+      const r = z.getBoundingClientRect();
+      return r.bottom > 0 && r.top < vh;
+    });
+    fab.classList.toggle("is-visible", !zoneOnScreen);
+  }
+  if (fab) {
+    window.addEventListener("scroll", updateFab, { passive: true });
+    window.addEventListener("resize", updateFab);
+    updateFab();
+  }
+
   // ---------- Магазини і карта ----------
   const mapFrame = document.getElementById("mapFrame");
   document.querySelectorAll(".location").forEach((btn) => {
