@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juliya Buket — квіткова крамниця на Оболоні</title>
+  <meta name="description" content="Juliya Buket — квіти з душею, кульки з настроєм. Авторські букети та доставка по Києву з 5:30 до 23:30. Оболонський проспект, 36.">
+  <meta name="theme-color" content="#7a1f3d">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌹</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Marck+Script&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="#top" class="logo" aria-label="Juliya Buket — на головну">
+      <span class="logo__name">Juliya Buket</span>
+      <span class="logo__sub">квіткова крамниця</span>
+    </a>
+    <div class="header__actions">
+      <a class="header__phone" href="tel:+380951950491">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        <span>+380 95 195 04 91</span>
+      </a>
+      <button class="btn btn--primary btn--sm" data-order>Замовити букет</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero__bg" style="background-image:url('images/magazyn.jpg')"></div>
+    <div class="container hero__content">
+      <p class="hero__slogan">Квіти з душею, кульки з настроєм</p>
+      <h1 class="hero__title">Квіти з душею на&nbsp;Оболоні</h1>
+      <p class="hero__subtitle">Доставка по Києву з&nbsp;5:30 до&nbsp;23:30</p>
+      <div class="hero__buttons">
+        <a href="#catalog" class="btn btn--light">Дивитися каталог</a>
+        <button class="btn btn--outline-light" data-order>Замовити букет</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="catalog">
+    <div class="container">
+      <h2 class="section__title">Каталог</h2>
+      <p class="section__lead">Оберіть букет — ми зберемо його свіжим у день доставки</p>
+      <div class="filters" role="tablist" aria-label="Фільтр за ціною"></div>
+      <div class="grid" id="grid"></div>
+      <p class="grid__empty" hidden>У цій категорії поки немає букетів.</p>
+    </div>
+  </section>
+
+  <section class="section section--tinted" id="why">
+    <div class="container">
+      <h2 class="section__title">Чому ми</h2>
+      <div class="features">
+        <div class="feature">
+          <div class="feature__icon">🚚</div>
+          <h3>Доставка з 5:30</h3>
+          <p>Привеземо букет до пробудження — щоденно з 5:30 до 23:30 по всьому Києву.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🌷</div>
+          <h3>Свіжі квіти щодня</h3>
+          <p>Щоранку отримуємо нові поставки, тому букети стоять довго.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">💐</div>
+          <h3>Авторські букети</h3>
+          <p>Кожна композиція — ручна робота флориста під ваш настрій і привід.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🎈</div>
+          <h3>Кульки з настроєм</h3>
+          <p>Гелієві та фольговані кульки, цифри і фонтани — до букета або окремо.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contacts">
+    <div class="container contacts">
+      <div class="contacts__info">
+        <h2 class="section__title section__title--left">Як нас знайти</h2>
+        <p class="contacts__address">Оболонський проспект, 36, Київ<br><span>м. Героїв Дніпра</span></p>
+        <dl class="hours">
+          <div><dt>Магазин</dt><dd>08:00–22:00</dd></div>
+          <div><dt>Доставка</dt><dd>05:30–23:30</dd></div>
+        </dl>
+        <p><a class="contacts__phone" href="tel:+380951950491">+380 95 195 04 91</a></p>
+        <div class="contacts__buttons">
+          <button class="btn btn--primary" data-order>Замовити букет</button>
+          <a class="btn btn--outline" href="https://www.instagram.com/juliyabuket/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe
+          title="Juliya Buket на карті"
+          src="https://www.google.com/maps?q=%D0%9E%D0%B1%D0%BE%D0%BB%D0%BE%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9+%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C+36%2C+%D0%9A%D0%B8%D1%97%D0%B2%2C+%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0&hl=uk&z=16&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <div class="logo logo--footer"><span class="logo__name">Juliya Buket</span></div>
+      <p class="footer__slogan">Квіти з душею, кульки з настроєм</p>
+    </div>
+    <div class="footer__links">
+      <a href="tel:+380951950491">+380 95 195 04 91</a>
+      <a href="https://www.instagram.com/juliyabuket/" target="_blank" rel="noopener">Instagram @juliyabuket</a>
+    </div>
+  </div>
+  <p class="footer__demo">Демо-версія сайту</p>
+</footer>
+
+<!-- Модальне вікно замовлення -->
+<div class="modal" id="orderModal" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+    <button class="modal__close" data-close aria-label="Закрити">×</button>
+
+    <form class="order" id="orderForm" novalidate>
+      <h2 class="modal__title" id="orderTitle">Оформлення замовлення</h2>
+
+      <label class="field">
+        <span>Букет</span>
+        <select name="bouquet" id="bouquetSelect" required></select>
+      </label>
+
+      <div class="field-row">
+        <label class="field">
+          <span>Ваше ім'я *</span>
+          <input name="name" type="text" autocomplete="name" required>
+        </label>
+        <label class="field">
+          <span>Телефон *</span>
+          <input name="phone" type="tel" autocomplete="tel" placeholder="+380 __ ___ __ __" required>
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Ім'я отримувача</span>
+        <input name="recipient" type="text">
+      </label>
+
+      <div class="field">
+        <span>Отримання</span>
+        <div class="segmented">
+          <label><input type="radio" name="delivery" value="delivery" checked><span>Доставка</span></label>
+          <label><input type="radio" name="delivery" value="pickup"><span>Самовивіз</span></label>
+        </div>
+      </div>
+
+      <label class="field" id="addressField">
+        <span>Адреса доставки *</span>
+        <input name="address" type="text" autocomplete="street-address" placeholder="Вулиця, будинок, квартира" required>
+      </label>
+      <p class="pickup-note" id="pickupNote" hidden>Самовивіз: Оболонський проспект, 36 (м. Героїв Дніпра), 08:00–22:00</p>
+
+      <div class="field-row">
+        <label class="field">
+          <span>Дата *</span>
+          <input name="date" type="date" required>
+        </label>
+        <label class="field">
+          <span>Час</span>
+          <input name="time" type="time" min="05:30" max="23:30">
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Текст листівки</span>
+        <textarea name="card" rows="2" placeholder="Наприклад: «З днем народження, мамо!»"></textarea>
+      </label>
+
+      <label class="field">
+        <span>Коментар</span>
+        <textarea name="comment" rows="2"></textarea>
+      </label>
+
+      <button type="submit" class="btn btn--primary btn--block">Надіслати заявку</button>
+      <p class="order__note">Демо-версія: заявка нікуди не надсилається.</p>
+    </form>
+
+    <div class="success" id="orderSuccess" hidden>
+      <div class="success__icon">🌸</div>
+      <h2 class="modal__title">Дякуємо!</h2>
+      <p>Заявка прийнята, ми зв'яжемося з вами.</p>
+      <button class="btn btn--primary" data-close>Закрити</button>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
